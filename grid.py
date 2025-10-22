@@ -1,25 +1,76 @@
+import pygame
+from colors import Colors
 #TODO: Create the grid for the game board
 class Grid:
     def __init__(self):
         '''
         initiate values of instance of Grid
         '''
-        pass
+        self.num_rows = 20
+        self.num_cols = 10
+        self.cell_size = 30
+        self.grid = [[0 for j in range(self.num_rows)] for i in range(self.num_rows)]
+        self.colors = Colors.get_cell_colors()
     #
     def print_grid(self):
         '''
         test method to print grid to console
         '''
-        pass
+        for row in range(self.num_rows):
+            for column in range(self.num_cols):
+                print(self.grid[row][column], end = " ")
+            print()
 
-    def get_colors(self):
-        '''
-        return predefined rgb values of selected colors
-        '''
-        pass
+    def is_inside(self, row, column):
+        if row >= 0 and row < self.num_rows and column >= 0 and column < self.num_cols:
+            return True
+        else:
+            return False
+    
+    def is_empty(self, row, column):
+        if self.grid[row][column] == 0:
+            return True
+        else:
+            return False
+    
+    def is_row_full(self, row):
+        for column in range(self.num_cols):
+            if self.grid[row][column] == 0:
+                return False
+        return True
+    
+    def clear_row(self, row):
+        for column in range(self.num_cols):
+            self.grid[row][column] = 0
+    
+    def move_row_down(self, row, num_rows):
+        for column in range(self.num_cols):
+            self.grid[row + num_rows][column] = self.grid[row][column]
+            self.grid[row][column] = 0
 
-    def draw(self):
+    def clear_full_rows(self):
+        completed = 0
+        for row in range(self.num_rows - 1, 0, -1):
+            if self.is_row_full(row):
+                self.clear_row(row)
+                completed += 1
+            elif completed > 0:
+                self.move_row_down(row, completed)
+        
+        return completed
+
+    def reset(self):
+        for row in range(self.num_rows):
+            for column in range(self.num_cols):
+                self.grid[row][column] = 0
+
+    def draw(self, screen):
         '''
         draw grid to the game board
         '''
-        pass
+        for row in range(self.num_rows):
+            for column in range(self.num_cols):
+                cell_value = self.grid[row][column]
+                # Rect = rectangles, used for positioning, collision detection, drawing objects..
+                cell_rect = pygame.Rect(column*self.cell_size + 11, row*self.cell_size + 11, self.cell_size -1, self.cell_size - 1)
+                pygame.draw.rect(screen, self.colors[cell_value], cell_rect)
