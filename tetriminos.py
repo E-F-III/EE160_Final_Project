@@ -1,23 +1,23 @@
 from block import Block
-#TODO inherit attributes from the parent Block class and define the different Tetriminos
+from position import Position
 
-class L_block:
+class L_block(Block):
     pass
 
-class L_block_reverse:
+class J_block(Block):
     pass
 
-class S_block:
+class I_block(Block):
     pass
 
-class Z_block:
+class O_block(Block):
     pass
 
-class T_block:
+class S_block(Block):
     pass
 
-class I_block:
+class T_block(Block):
     pass
 
-class Square_block:
+class Z_block(Block):
     pass

@@ -1,25 +1,30 @@
+import pygame
+from colors import Colors
 #TODO: Create the grid for the game board
 class Grid:
     def __init__(self):
-        '''
-        initiate values of instance of Grid
-        '''
         pass
     #
     def print_grid(self):
-        '''
-        test method to print grid to console
-        '''
+        pass
+    
+    def is_empty(self, row, column):
+        pass
+    
+    def is_row_full(self, row):
+        pass
+    
+    def clear_row(self, row):
+        pass
+    
+    def move_row_down(self, row, num_rows):
         pass
 
-    def get_colors(self):
-        '''
-        return predefined rgb values of selected colors
-        '''
+    def clear_full_rows(self):
         pass
 
-    def draw(self):
-        '''
-        draw grid to the game board
-        '''
+    def reset(self):
+        pass
+
+    def draw(self, screen):
         pass
