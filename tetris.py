@@ -1,5 +1,4 @@
 import pygame, sys
-import random
 from game import Game
 from colors import Colors
 
