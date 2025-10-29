@@ -1,11 +1,11 @@
 from grid import Grid
-from tetriminos import *
+from tetrimino import *
 import random
 
 class Game:
     def __init__(self):
         self.grid = Grid()
-        self.blocks = [I_block(), J_block(), L_block(), O_block(), S_block(), T_block(), Z_block()]
+        self.blocks = [IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()]
         self.current_block = self.get_random_block()
         self.next_block = self.get_random_block()
         self.game_over = False
@@ -22,7 +22,7 @@ class Game:
 
     def get_random_block(self):
         if len(self.blocks) == 0:
-            self.blocks = [I_block(), J_block(), L_block(), O_block(), S_block(), T_block(), Z_block()]
+            self.blocks = [IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()]
         
         block = random.choice(self.blocks)
         self.blocks.remove(block)
@@ -59,7 +59,7 @@ class Game:
     
     def reset(self):
         self.grid.reset()
-        self.blocks = [I_block(), J_block(), L_block(), O_block(), S_block(), T_block(), Z_block()]
+        self.blocks = [IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()]
         self.current_block = self.get_random_block()
         self.next_block = self.get_random_block()
         self.score = 0

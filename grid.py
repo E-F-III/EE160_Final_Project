@@ -1,30 +1,24 @@
 import pygame
 from colors import Colors
-#TODO: Create the grid for the game board
-class Grid:
-    def __init__(self):
-        pass
-    #
+
+class Grid: 
+    def __init__ (self):
+        self.num_rows = 20 
+        self.num_cols = 10 
+        self.cell_size = 30 
+        self.grid = [[0 for j in range(self.num_cols)] for i in range(self.num_rows)]
+        self.colors = Colors.get_cell_colors()
+# doublecheck understanding 
     def print_grid(self):
-        pass
-    
-    def is_empty(self, row, column):
-        pass
-    
-    def is_row_full(self, row):
-        pass
-    
-    def clear_row(self, row):
-        pass
-    
-    def move_row_down(self, row, num_rows):
-        pass
+        for row in range(self.num_rows):
+            for column in range(self.num_cols):
+                print(self.grid[row][column], end = " ")
+            print()
 
-    def clear_full_rows(self):
-        pass
-
-    def reset(self):
-        pass
-
-    def draw(self, screen):
-        pass
+# draw grid 
+    def draw(self, screen): 
+        for row in range(self.num_rows):
+            for column in range(self.num_cols):
+                cell_value = self.grid[row][column]
+                cell_rect = pygame.Rect(column*self.cell_size +1, row*self.cell_size, self.cell_size -1, self.cell_size - 1) 
+                pygame.draw.rect(screen, self.colors[cell_value], cell_rect) 
