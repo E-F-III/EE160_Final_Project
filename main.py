@@ -1,7 +1,9 @@
 import pygame, sys
 import random
-from game import Game
-from colors import Colors
+from base_tetris.game import Game
+from base_tetris.colors import Colors
+
+from pentix.pentix_game import Pentrix
 
 pygame.init()
 
@@ -19,7 +21,9 @@ pygame.display.set_caption("Tetris")
 
 clock = pygame.time.Clock()
 
-game = Game()
+# game = Game()
+
+game = Pentrix()
 
 GAME_UPDATE = pygame.USEREVENT # used to create custom events
 pygame.time.set_timer(GAME_UPDATE, 200)
