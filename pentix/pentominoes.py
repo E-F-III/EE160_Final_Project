@@ -208,8 +208,18 @@ class LL_block(Block):
 
         self.cells = {
             0:[Position(0,1),Position(0,2),Position(1,2),Position(2,2),Position(2,3)],
-            1:[Position(0,1),Position(0,2),Position(0,3),Position(1,1),Position(2,1)],
+            1:[Position(0,3),Position(1,1),Position(1,2),Position(1,3),Position(2,1)],
+        }
 
+        self.move(0, 3)
+
+class JJ_block(Block):
+    def __init__(self):
+        super().__init__(id = 1)
+
+        self.cells = {
+            0:[Position(0,2),Position(0,3),Position(1,2),Position(2,2),Position(2,1)],
+            1:[Position(0,1),Position(1,1),Position(1,2),Position(1,3),Position(2,3)],
         }
 
         self.move(0, 3)
