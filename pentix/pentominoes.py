@@ -99,3 +99,53 @@ class L5_block(Block):
         }
 
         self.move(0, 3)
+
+class S5_block(Block):
+    def __init__(self):
+        super().__init__(id = 1)
+
+        self.cells = {
+            0:[Position(0,2),Position(0,3),Position(1,0),Position(1,1),Position(1,2),],
+            1:[Position(0,1),Position(1,1),Position(1,2),Position(2,2),Position(3,2),],
+            2:[Position(0,2),Position(0,3),Position(0,4),Position(1,1),Position(1,2),],
+            3:[Position(0,1),Position(1,1),Position(2,1),Position(2,2),Position(3,2),],
+        }
+
+        self.move(0, 3)
+
+class Z5_block(Block):
+    def __init__(self):
+        super().__init__(id = 1)
+
+        self.cells = {
+            0:[Position(0,0),Position(0,1),Position(1,1),Position(1,2),Position(1,3),],
+            1:[Position(0,2),Position(1,1),Position(1,2),Position(2,1),Position(3,1),],
+            2:[Position(0,0),Position(0,1),Position(0,2),Position(1,2),Position(1,3),],
+            3:[Position(0,2),Position(1,2),Position(2,1),Position(2,2),Position(3,1),],
+        }
+
+        self.move(0, 3)
+
+class TL_block(Block):
+    def __init__(self):
+        super().__init__(id = 1)
+
+        self.cells = {
+            0:[Position(0,2),Position(1,0),Position(1,1),Position(1,2),Position(1,3),],
+            1:[Position(0,2),Position(1,2),Position(2,2),Position(2,3),Position(3,2),],
+            2:[Position(0,0),Position(0,1),Position(0,2),Position(0,3),Position(1,1),],
+            3:[Position(0,2),Position(1,1),Position(1,2),Position(2,2),Position(3,2),],
+        }
+
+        self.move(0, 3)
+
+class TJ_block(Block):
+    def __init__(self):
+        super().__init__(id = 1)
+
+        self.cells = {
+            0:[Position(0,1),Position(1,0),Position(1,1),Position(1,2),Position(1,3),],
+            1:[Position(0,1),Position(1,1),Position(1,2),Position(2,1),Position(3,1),],
+            2:[Position(1,0),Position(1,1),Position(1,2),Position(1,3),Position(2,2),],
+            3:[Position(0,2),Position(1,2),Position(2,1),Position(2,2),Position(3,2),],
+        }
