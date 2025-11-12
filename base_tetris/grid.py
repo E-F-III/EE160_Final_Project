@@ -1,5 +1,5 @@
 import pygame
-from colors import Colors
+from .colors import Colors
 #TODO: Create the grid for the game board
 class Grid:
     def __init__(self):

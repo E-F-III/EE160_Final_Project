@@ -1,5 +1,5 @@
-from grid import Grid
-from tetriminos import *
+from .grid import Grid
+from .tetriminos import *
 import random
 
 class Game:
@@ -18,6 +18,8 @@ class Game:
             self.score += 300
         elif lines_cleared == 3:
             self.score += 500
+        elif lines_cleared == 4:
+            self.score += 1000
         self.score += move_down_points
 
     def get_random_block(self):
