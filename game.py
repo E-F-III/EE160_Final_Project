@@ -78,7 +78,7 @@ class Game:
     def rotate(self):
         self.current_block.rotate()
         if self.block_inside() == False or self.block_fits() == False:
-            self.current_block.undo_rotate()
+            self.current_block.undo_rotation()
     
     def block_inside(self): #boundary check
         tiles = self.current_block.get_cell_positions()
