@@ -12,12 +12,16 @@ class Game:
         self.score = 0
     
     def update_score(self, lines_cleared, move_down_points):
-        if lines_cleared ==1:
+        if lines_cleared == 1:
             self.score += 100
         elif lines_cleared == 2:
             self.score += 300
         elif lines_cleared == 3:
             self.score += 500
+        elif lines_cleared == 4:
+            self.score += 800
+        elif lines_cleared > 4:
+            self.score += 1600
         self.score += move_down_points
 
     def get_random_block(self):
@@ -73,8 +77,8 @@ class Game:
 
     def rotate(self):
         self.current_block.rotate()
-        if self.block_inside() == False:
-            self.current_block.undo_rotate()
+        if self.block_inside() == False or self.block_fits() == False:
+            self.current_block.undo_rotation()
     
     def block_inside(self): #boundary check
         tiles = self.current_block.get_cell_positions()
@@ -88,7 +92,7 @@ class Game:
         self.grid.draw(screen)
         self.current_block.draw(screen, 11, 11)
 
-        if self.next_block. id == 3:
+        if self.next_block.id == 3:
             self.next_block.draw(screen, 255, 290)
         elif self.next_block.id == 4:
             self.next_block.draw(screen, 255, 280)
