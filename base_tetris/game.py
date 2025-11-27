@@ -1,5 +1,5 @@
-from grid import Grid
-from tetrimino import *
+from .grid import Grid
+from .tetrimino import *
 import random
 
 class Game:

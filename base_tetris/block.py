@@ -1,6 +1,6 @@
-from colors import Colors 
 import pygame 
-from position import Position
+from .colors import Colors 
+from .position import Position
 
 class Block:
     def __init__(self, id):
@@ -32,7 +32,7 @@ class Block:
 
     def undo_rotation(self):
         self.rotation_state -= 1
-        if self.rotation_state == 0:
+        if self.rotation_state == -1:
             self.rotation_state = len(self.cells) - 1
 
     def draw(self, screen, offset_x, offset_y):
