@@ -8,7 +8,13 @@ blocks = [I5_block(), V5_block(), X5_block(), T5_block(), U5_block(),
           TZ_block(), LL_block(), JJ_block()]
 
 class Pentrix(Game):
+    """
+    Pentrix game class, inherits from the base Game class.
+    """
     def __init__(self):
+        """
+        Initialize the Pentrix game with a grid and a set of pentomino blocks.
+        """
         super().__init__()
         self.blocks = [I5_block(), V5_block(), X5_block(), T5_block(), U5_block(),
           W5_block(), J5_block(), L5_block(), S5_block(), Z5_block(),
@@ -18,6 +24,9 @@ class Pentrix(Game):
         self.next_block = self.get_random_block()
 
     def get_random_block(self):
+        """
+        Get a random pentomino block from the available blocks.
+        """
         if len(self.blocks) == 0:
             self.blocks = [I5_block(), V5_block(), X5_block(), T5_block(), U5_block(),
           W5_block(), J5_block(), L5_block(), S5_block(), Z5_block(),
@@ -29,6 +38,9 @@ class Pentrix(Game):
         return block
     
     def reset(self):
+        """
+        Reset the game state, including the grid, blocks, current and next blocks, and score.
+        """
         self.grid.reset()
         self.blocks = [I5_block(), V5_block(), X5_block(), T5_block(), U5_block(),
           W5_block(), J5_block(), L5_block(), S5_block(), Z5_block(),
@@ -39,5 +51,8 @@ class Pentrix(Game):
         self.score = 0
 
     def draw(self, screen):
+        """
+        Draw the game state on the screen.
+        """
         self.grid.draw(screen)
         self.current_block.draw(screen, 11, 11)

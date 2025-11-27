@@ -3,7 +3,13 @@ from .tetrimino import *
 import random
 
 class Game:
+    """
+    Base Tetris game class, handles the game logic and state.
+    """
     def __init__(self):
+        """
+        Initialize the game with a grid and a set of tetrimino blocks.
+        """
         self.grid = Grid()
         self.blocks = [IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()]
         self.current_block = self.get_random_block()
@@ -14,6 +20,9 @@ class Game:
         self.fall_time = 0
     
     def update_score(self, lines_cleared, move_down_points):
+        """
+        Update the score based on the number of lines cleared and points for moving down.
+        """
         if lines_cleared == 1:
             self.score += 100
         elif lines_cleared == 2:
@@ -27,6 +36,9 @@ class Game:
         self.score += move_down_points
 
     def get_random_block(self):
+        """
+        Get a random tetrimino block from the available blocks.
+        """
         if len(self.blocks) == 0:
             self.blocks = [IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()]
         
@@ -35,16 +47,25 @@ class Game:
         return block
     
     def move_left(self):
+        """
+        Move the current block left, if possible.
+        """
         self.current_block.move(0, -1)
         if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(0,1)
 
     def move_right(self):
+        """
+        Move the current block right, if possible.
+        """
         self.current_block.move(0, 1)
         if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(0,-1)
     
     def move_down(self):
+        """
+        Move the current block down, if possible.
+        """
         self.current_block.move(1, 0)
         if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(-1,0)
@@ -59,6 +80,9 @@ class Game:
             self.update_score(0, 1)
     
     def lock_block(self):
+        """
+        Lock the current block in place and update the game state.
+        """
         tiles = self.current_block.get_cell_positions()
         for position in tiles:
             self.grid.grid[position.row][position.column] = self.current_block.id
@@ -75,6 +99,9 @@ class Game:
             self.game_over = True
     
     def reset(self):
+        """
+        Reset the game state, including the grid, blocks, current and next blocks, and score.
+        """
         self.grid.reset()
         self.blocks = [IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()]
         self.current_block = self.get_random_block()
@@ -82,6 +109,9 @@ class Game:
         self.score = 0
 
     def block_fits(self):
+        """
+        Check if the current block fits in the grid without overlapping existing blocks.
+        """
         tiles = self.current_block.get_cell_positions()
         for tile in tiles:
             if self.grid.is_empty(tile.row, tile.column) == False:
@@ -89,6 +119,9 @@ class Game:
         return True
 
     def rotate(self):
+        """
+        Rotate the current block, if possible.
+        """
         self.current_block.rotate()
         if self.block_inside() == False or self.block_fits() == False:
             self.current_block.undo_rotation()
@@ -99,6 +132,9 @@ class Game:
             self.current_block.rotate()
     
     def block_inside(self): #boundary check
+        """
+        Check if the current block is inside the grid boundaries.
+        """
         tiles = self.current_block.get_cell_positions()
         for tile in tiles:
             if self.grid.is_inside(tile.row, tile.column) == False:
@@ -107,6 +143,9 @@ class Game:
         return True
     
     def draw(self, screen):
+        """
+        Draw the game state on the screen.
+        """
         self.grid.draw(screen)
         self.current_block.draw(screen, 11, 11)
 
