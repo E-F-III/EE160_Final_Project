@@ -3,7 +3,7 @@ from base_tetris.position import Position
 
 class I5_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 6)
 
         self.cells = {
             0:[Position(0,0),Position(0,1),Position(0,2),Position(0,3),Position(0,4),],
@@ -14,7 +14,7 @@ class I5_block(Block):
 
 class V5_block(Block):
     def __init__(self):
-        super().__init__(id = 2)
+        super().__init__(id = 7)
 
         self.cells = {
             0:[Position(0,2),Position(1,2),Position(2,0),Position(2,1),Position(2,2),],
@@ -27,7 +27,7 @@ class V5_block(Block):
 
 class T5_block(Block):
     def __init__(self):
-        super().__init__(id = 3)
+        super().__init__(id = 5)
 
         self.cells = {
             0:[Position(0,0),Position(0,1),Position(0,2),Position(1,1),Position(2,1),],
@@ -40,7 +40,7 @@ class T5_block(Block):
 
 class U5_block(Block):
     def __init__(self):
-        super().__init__(id = 4)
+        super().__init__(id = 2)
 
         self.cells = {
             0:[Position(0,0),Position(0,1),Position(0,2),Position(1,0),Position(1,2),],
@@ -53,7 +53,7 @@ class U5_block(Block):
 
 class W5_block(Block):
     def __init__(self):
-        super().__init__(id = 5)
+        super().__init__(id = 3)
 
         self.cells = {
             0:[Position(0,2),Position(1,1),Position(1,2),Position(2,0),Position(2,1),],
@@ -66,7 +66,7 @@ class W5_block(Block):
 
 class X5_block(Block):
     def __init__(self):
-        super().__init__(id = 6)
+        super().__init__(id = 4)
 
         self.cells = {
             0:[Position(0,1),Position(1,0),Position(1,1),Position(1,2),Position(2,1),],
@@ -76,7 +76,7 @@ class X5_block(Block):
 
 class J5_block(Block):
     def __init__(self):
-        super().__init__(id = 7)
+        super().__init__(id = 1)
 
         self.cells = {
             0:[Position(0,0),Position(1,0),Position(1,1),Position(1,2),Position(1,3),],
@@ -89,7 +89,7 @@ class J5_block(Block):
 
 class L5_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 6)
 
         self.cells = {
             0:[Position(0,3),Position(1,0),Position(1,1),Position(1,2),Position(1,3),],
@@ -102,7 +102,7 @@ class L5_block(Block):
 
 class S5_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 7)
 
         self.cells = {
             0:[Position(0,2),Position(0,3),Position(1,0),Position(1,1),Position(1,2),],
@@ -115,7 +115,7 @@ class S5_block(Block):
 
 class Z5_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 5)
 
         self.cells = {
             0:[Position(0,0),Position(0,1),Position(1,1),Position(1,2),Position(1,3),],
@@ -128,7 +128,7 @@ class Z5_block(Block):
 
 class TL_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 2)
 
         self.cells = {
             0:[Position(0,2),Position(1,0),Position(1,1),Position(1,2),Position(1,3),],
@@ -141,7 +141,7 @@ class TL_block(Block):
 
 class TJ_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 3)
 
         self.cells = {
             0:[Position(0,1),Position(1,0),Position(1,1),Position(1,2),Position(1,3),],
@@ -154,7 +154,7 @@ class TJ_block(Block):
 
 class OZ_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 4)
 
         self.cells = {
             0:[Position(0,1),Position(0,2),Position(1,1),Position(1,2), Position(1,3)],
@@ -180,7 +180,7 @@ class OS_block(Block):
 
 class TS_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 6)
 
         self.cells = {
             0:[Position(0,2),Position(1,2),Position(1,3),Position(2,1),Position(2,2)],
@@ -193,7 +193,7 @@ class TS_block(Block):
 
 class TZ_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 7)
 
         self.cells = {
             0:[Position(0,2),Position(1,1),Position(1,2),Position(2,2),Position(2,3)],
@@ -206,7 +206,7 @@ class TZ_block(Block):
 
 class LL_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 5)
 
         self.cells = {
             0:[Position(0,1),Position(0,2),Position(1,2),Position(2,2),Position(2,3)],
@@ -217,7 +217,7 @@ class LL_block(Block):
 
 class JJ_block(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 2)
 
         self.cells = {
             0:[Position(0,2),Position(0,3),Position(1,2),Position(2,2),Position(2,1)],
