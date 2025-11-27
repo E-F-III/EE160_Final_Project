@@ -39,7 +39,6 @@ class Grid:
         for column in range(self.num_cols):
             if self.grid[row][column] == 0:
                 return False
-        
         return True
     
     def clear_row(self, row):
@@ -73,6 +72,7 @@ class Grid:
             for column in range(self.num_cols):
                 cell_value = self.grid[row][column]
                 # Rect = rectangles, used for positioning, collision detection, drawing objects..
-                cell_rect = pygame.Rect(column*self.cell_size + 11, row*self.cell_size + 11, self.cell_size -1, self.cell_size - 1)
+                cell_rect = pygame.Rect(column*self.cell_size + 11, 
+                                        row*self.cell_size + 11, self.cell_size -1, self.cell_size - 1)
                 pygame.draw.rect(screen, self.colors[cell_value], cell_rect)
             
