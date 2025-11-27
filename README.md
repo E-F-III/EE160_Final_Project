@@ -41,7 +41,6 @@ EE160_Final_Project/
 ├── base_tetris             # Contains files for the base Tetris logic
 ├── base_demo.py            # Contains code to run the base Tetris game
 ├── menu.py                 # Contains code for the menu
-├── colors.py               # Contains colors class, used to select reusable colors in other modules
 ├── chaos/                  # Contains files that are used for the chaos gamemode
 ├── marathon/               # Contains files that are used for the marathon gamemode
 ├── pentix/                 # Contains files that are used for the pentix gamemode
