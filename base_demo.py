@@ -1,7 +1,6 @@
 import pygame, sys
-import random
-from game import Game
-from colors import Colors
+from base_tetris.game import Game
+from base_tetris.colors import Colors
 
 pygame.init()
 
