@@ -16,6 +16,10 @@ class Game:
         self.next_block = self.get_random_block()
         self.game_over = False
         self.score = 0
+        self.lines_cleared = 0
+        self.level = 1
+        self.game_speed = 500  # milliseconds per update
+        self.fall_time = 0  # Time accumulator for block falling
     
     def update_score(self, lines_cleared, move_down_points):
         """
@@ -31,6 +35,10 @@ class Game:
             self.score += 800
         elif lines_cleared > 4:
             self.score += 1600
+
+        self.lines_cleared += lines_cleared
+        self.level = self.lines_cleared // 10 + 1
+        self.game_speed = max(50, 500 - (self.level - 1) * 50)
         self.score += move_down_points
 
     def get_random_block(self):
