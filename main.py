@@ -138,7 +138,7 @@ class GameManager:
         pygame.draw.rect(screen, Colors.light_blue, self.next_rect, 0, 10)
         
         # Score value
-        score_value_surface = title_font.render(str(self.game.fall_speed), True, Colors.white)
+        score_value_surface = title_font.render(str(self.game.score), True, Colors.white)
         screen.blit(score_value_surface, 
                    score_value_surface.get_rect(centerx=self.score_rect.centerx, 
                                                 centery=self.score_rect.centery))
