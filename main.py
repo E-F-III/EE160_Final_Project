@@ -54,7 +54,7 @@ class GameManager:
             self.game = Pentrix()
         
         self.state = STATE_PLAYING
-        pygame.time.set_timer(self.GAME_UPDATE, 200)
+        pygame.time.set_timer(self.GAME_UPDATE, self.game.fall_speed)
     
     def return_to_menu(self):
         """Return to main menu"""
@@ -138,7 +138,7 @@ class GameManager:
         pygame.draw.rect(screen, Colors.light_blue, self.next_rect, 0, 10)
         
         # Score value
-        score_value_surface = title_font.render(str(self.game.score), True, Colors.white)
+        score_value_surface = title_font.render(str(self.game.fall_speed), True, Colors.white)
         screen.blit(score_value_surface, 
                    score_value_surface.get_rect(centerx=self.score_rect.centerx, 
                                                 centery=self.score_rect.centery))
