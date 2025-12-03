@@ -12,7 +12,9 @@ class Block:
         self.rotation_state = 0 
         # get colors from Colors class
         self.colors = Colors.get_cell_colors()
-    
+
+        self.tile_colors = []
+        
     def move(self, rows, columns):
         self.row_offset += rows
         self.column_offset += columns
