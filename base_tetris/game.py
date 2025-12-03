@@ -10,6 +10,8 @@ class Game:
         self.next_block = self.get_random_block()
         self.game_over = False
         self.score = 0
+        self.fall_speed = 500
+        self.fall_time = 0
     
     def update_score(self, lines_cleared, move_down_points):
         if lines_cleared == 1:
@@ -47,6 +49,13 @@ class Game:
         if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(-1,0)
             self.lock_block()
+            return False
+        return True
+    
+    def instant_drop(self):
+        not_locked = True
+        while not_locked:
+            not_locked = self.move_down()
     
     def lock_block(self):
         tiles = self.current_block.get_cell_positions()
@@ -55,11 +64,10 @@ class Game:
         self.current_block = self.next_block
         self.next_block = self.get_random_block()
         rows_cleared = self.grid.clear_full_rows()
-
-        if hasattr(self, 'add_lines'):
-            self.add_lines(rows_cleared)
         
         self.update_score(rows_cleared, 0)
+        if hasattr(self, 'add_lines'):
+            self.add_lines(rows_cleared)
 
         if self.block_fits() == False:
             self.game_over = True
