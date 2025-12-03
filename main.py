@@ -98,8 +98,10 @@ class GameManager:
                 elif event.key == pygame.K_DOWN:
                     self.game.move_down()
                     self.game.update_score(0, 1)
-                elif event.key == pygame.K_UP:
+                elif event.key == pygame.K_UP or event.key == pygame.K_x:
                     self.game.rotate()
+                elif event.key == pygame.K_z:
+                    self.game.rotate_counterclockwise()
                 elif event.key == pygame.K_SPACE:
                     self.game.instant_drop()
         

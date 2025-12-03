@@ -67,6 +67,7 @@ class Game:
         rows_cleared = self.grid.clear_full_rows()
         
         self.update_score(rows_cleared, 0)
+        
         if hasattr(self, 'add_lines'):
             self.add_lines(rows_cleared)
 
@@ -91,6 +92,11 @@ class Game:
         self.current_block.rotate()
         if self.block_inside() == False or self.block_fits() == False:
             self.current_block.undo_rotation()
+    
+    def rotate_counterclockwise(self):
+        self.current_block.undo_rotation()
+        if self.block_inside() == False or self.block_fits() == False:
+            self.current_block.rotate()
     
     def block_inside(self): #boundary check
         tiles = self.current_block.get_cell_positions()
