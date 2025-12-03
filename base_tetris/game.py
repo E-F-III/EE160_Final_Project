@@ -56,6 +56,7 @@ class Game:
         not_locked = True
         while not_locked:
             not_locked = self.move_down()
+            self.update_score(0, 1)
     
     def lock_block(self):
         tiles = self.current_block.get_cell_positions()
