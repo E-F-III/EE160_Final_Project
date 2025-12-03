@@ -54,7 +54,7 @@ class GameManager:
             self.game = Pentrix()
         
         self.state = STATE_PLAYING
-        pygame.time.set_timer(self.GAME_UPDATE, 200)
+        pygame.time.set_timer(self.GAME_UPDATE, self.game.fall_speed)
     
     def return_to_menu(self):
         """Return to main menu"""
@@ -100,9 +100,11 @@ class GameManager:
                     self.game.update_score(0, 1)
                 elif event.key == pygame.K_UP:
                     self.game.rotate()
+                elif event.key == pygame.K_SPACE:
+                    self.game.instant_drop()
         
-        if event.type == self.GAME_UPDATE and not self.game.game_over:
-            self.game.move_down()
+        # if event.type == self.GAME_UPDATE and not self.game.game_over:
+        #     self.game.move_down()
     
     def draw_menu(self):
         """Draw the main menu"""
@@ -175,8 +177,16 @@ class GameManager:
             elif self.state == STATE_PLAYING:
                 self.draw_game()
             
+            delta_time = clock.tick(60) / 1000
+            if self.state == STATE_PLAYING and not self.game.game_over:
+                self.game.fall_time += delta_time
+
+                if self.game.fall_time >= self.game.fall_speed / 1000:
+                    self.game.move_down()
+                    self.game.fall_time = 0
+
             pygame.display.update()
-            clock.tick(60)
+            
 
 # Run the game
 if __name__ == "__main__":

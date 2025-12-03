@@ -4,12 +4,13 @@ from .position import Position
 
 class Block:
     def __init__(self, id):
-        self.id = id 
-        self.cells = {}
+        self.id = id # to differentiate the blocks
+        self.cells = {} # to build the blocks/rotations
         self.cell_size = 30 
         self.row_offset = 0 
         self.column_offset = 0 
         self.rotation_state = 0 
+        # get colors from Colors class
         self.colors = Colors.get_cell_colors()
     
     def move(self, rows, columns):
@@ -35,6 +36,7 @@ class Block:
         if self.rotation_state == -1:
             self.rotation_state = len(self.cells) - 1
 
+# draws the block on the screen
     def draw(self, screen, offset_x, offset_y):
         tiles = self.get_cell_positions()
         for tile in tiles: 

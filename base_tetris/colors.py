@@ -12,6 +12,7 @@ class Colors:
     light_blue = (59, 85, 162) # 9 
     white = (255, 255, 255) # 10
 
-    @classmethod
+
+    @classmethod # allows method to class instead of instance 
     def get_cell_colors(cls):
         return [cls.dark_grey, cls.green, cls.red, cls.orange, cls.yellow, cls.purple, cls.cyan, cls.blue]
