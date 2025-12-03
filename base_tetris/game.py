@@ -76,6 +76,18 @@ class Game:
         if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(-1,0)
             self.lock_block()
+            return False
+        return True
+    
+    def instant_drop(self):
+        """
+        Move the current block all the way down until collision is found and lock the block
+        """
+        not_locked = True
+        while not_locked:
+            not_locked = self.move_down()
+
+        
     
     def lock_block(self):
         """

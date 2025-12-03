@@ -100,6 +100,8 @@ class GameManager:
                     self.game.update_score(0, 1)
                 elif event.key == pygame.K_UP:
                     self.game.rotate()
+                elif event.key == pygame.K_SPACE:
+                    self.game.instant_drop()
         
         # if event.type == self.GAME_UPDATE and not self.game.game_over:
         #     self.game.move_down()
