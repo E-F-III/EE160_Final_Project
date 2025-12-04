@@ -7,12 +7,17 @@ It is a mimic of Tetris with 3 distinct game modes.
 1. Marathon
     - The classic game mode where the speed of which the blocks fall increases at the player clears more lines
 
-![Marathon Gif](./assets/demo_marathon.gif)
+    ![Marathon Gif](./assets/demo_marathon.gif)
 
 2. Chaos
     - A spin on Tetris where inputs are inverted, the speed of the falling blocks is random, and the colors of the blocks are also random, to throw off players who are familiar with the game
+
+    ![Chaos Gif](./assets/demo_chaos.gif)
+
 3. Pentrix
     - A game mode where the spawned blocks are no longer Tetriminos (blocks of size 4), but are no Pentominoes (blocks of size 5)
+
+    ![Pentrix Gif](./assets/demo_pentrix.gif)
 
 When the app is running, use the keyboard to navigate the menu, and play the game
 
