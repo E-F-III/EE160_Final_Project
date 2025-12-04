@@ -151,11 +151,11 @@ class GameManager:
         if self.game.game_over:
             screen.blit(self.game_over_surface, (320, 450, 50, 50))
             
-            # Add restart/menu instructions
-            instruction_font = pygame.font.Font(None, 25)
-            restart_text = instruction_font.render("Space: Restart | ESC: Menu", True, Colors.white)
-            restart_rect = restart_text.get_rect(center=(250, 500))
-            screen.blit(restart_text, restart_rect)
+            # # Add restart/menu instructions
+            # instruction_font = pygame.font.Font(None, 25)
+            # restart_text = instruction_font.render("Space: Restart | ESC: Menu", True, Colors.white)
+            # restart_rect = restart_text.get_rect(center=(250, 500))
+            # screen.blit(restart_text, restart_rect)
         
         # Draw game
         self.game.draw(screen)

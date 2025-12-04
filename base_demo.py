@@ -46,6 +46,9 @@ while True:
                 game.update_score(0, 1)
             if event.key == pygame.K_UP and game.game_over == False:
                 game.rotate()
+            if event.key == pygame.K_SPACE and game.game_over == False:
+                while game.move_down():
+                    game.update_score(0, 2)
             
         if event.type == GAME_UPDATE and game.game_over == False: #moves block down
             game.move_down()
