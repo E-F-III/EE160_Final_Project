@@ -34,10 +34,12 @@ class GameManager:
         self.score_surface = title_font.render("Score", True, Colors.white)
         self.next_surface = title_font.render("Next", True, Colors.white)
         self.game_over_surface = title_font.render("Game Over", True, Colors.white)
-        
+        self.level_surface = title_font.render("Level", True, Colors.white)
+
         # UI rects
         self.score_rect = pygame.Rect(320, 55, 170, 60)
         self.next_rect = pygame.Rect(320, 215, 170, 180)
+        self.level_rect = pygame.Rect(320, 450, 170, 60)
         
         # Game timer
         self.GAME_UPDATE = pygame.USEREVENT
@@ -147,9 +149,16 @@ class GameManager:
                    score_value_surface.get_rect(centerx=self.score_rect.centerx, 
                                                 centery=self.score_rect.centery))
         
+        if self.game_mode == "Marathon":
+            screen.blit(self.level_surface, (365, 420, 50, 50))
+            pygame.draw.rect(screen, Colors.light_blue, self.level_rect, 0, 10)
+            level_value_surface = title_font.render(str(self.game.level), True, Colors.white)
+            screen.blit(level_value_surface, 
+                       level_value_surface.get_rect(centerx=self.level_rect.centerx, 
+                                                    centery=self.level_rect.centery))
         # Game over message
         if self.game.game_over:
-            screen.blit(self.game_over_surface, (320, 450, 50, 50))
+            screen.blit(self.game_over_surface, (320, 550, 50, 50))
             
             # # Add restart/menu instructions
             # instruction_font = pygame.font.Font(None, 25)

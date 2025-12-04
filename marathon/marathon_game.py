@@ -12,9 +12,9 @@ class Marathon(Game):
     def add_lines(self, num_lines):
         self.lines_cleared_total += num_lines
         self.level = self.lines_cleared_total // 5 # (increase level every 5 lines)
-        self.increase_fall_speed()
+        self.decrease_fall_speed()
 
-    def increase_fall_speed(self):
+    def decrease_fall_speed(self):
         initial_speed = 500 # moves down one every second 
         self.fall_speed = initial_speed - (self.level * 50) # every level increase, the fall speed will increase 
 
