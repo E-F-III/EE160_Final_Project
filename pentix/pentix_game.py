@@ -56,3 +56,16 @@ class Pentrix(Game):
         """
         self.grid.draw(screen)
         self.current_block.draw(screen, 11, 11)
+
+        if isinstance(self.next_block, I5_block):  
+            self.next_block.draw(screen, 245, 270)
+        elif isinstance(self.next_block, X5_block):
+            self.next_block.draw(screen, 255, 280)
+        elif isinstance(self.next_block, (TL_block, TJ_block, OZ_block, OS_block, TS_block, TZ_block)):
+            self.next_block.draw(screen, 255, 275)
+        elif isinstance(self.next_block, (LL_block, JJ_block)):
+            self.next_block.draw(screen, 255, 280)
+        elif isinstance(self.next_block, (V5_block, T5_block, U5_block, W5_block, J5_block, L5_block, S5_block, Z5_block)):
+            self.next_block.draw(screen, 260, 270)
+        else:
+            self.next_block.draw(screen, 255, 270)
